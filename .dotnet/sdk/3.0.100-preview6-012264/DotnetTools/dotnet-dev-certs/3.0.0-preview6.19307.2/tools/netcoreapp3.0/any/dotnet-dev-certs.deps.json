@@ -1,0 +1,43 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "dotnet-dev-certs/3.0.0-preview6.19307.2": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview6.19303.8",
+          "System.Security.Cryptography.Cng": "4.6.0-preview6.19303.8"
+        },
+        "runtime": {
+          "dotnet-dev-certs.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview6.19303.8": {},
+      "System.Security.Cryptography.Cng/4.6.0-preview6.19303.8": {}
+    }
+  },
+  "libraries": {
+    "dotnet-dev-certs/3.0.0-preview6.19307.2": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/3.0.0-preview6.19303.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9nE9InmtkWL1ZIAvzZPoe8zzr8JNrmyofR5++0NCLomrLSbR70b60hLXFE/7vXIVgbKdTo3CTsCcFTOSZoOIEw==",
+      "path": "microsoft.netcore.platforms/3.0.0-preview6.19303.8",
+      "hashPath": "microsoft.netcore.platforms.3.0.0-preview6.19303.8.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Cng/4.6.0-preview6.19303.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MdtlU0/lwxVNOn8sHe+vRYhgceTN7bBQG4xdSgNElV0zu7d8HQmDeVFJwSUAxMKM+BsjnI3XDRy6Acy8l/6ESQ==",
+      "path": "system.security.cryptography.cng/4.6.0-preview6.19303.8",
+      "hashPath": "system.security.cryptography.cng.4.6.0-preview6.19303.8.nupkg.sha512"
+    }
+  }
+}

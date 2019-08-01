@@ -1,0 +1,3723 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0/linux-x64",
+    "signature": "44424f8d82f9154cb3fc9baaf0358f3b9098e6c4"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {},
+    ".NETCoreApp,Version=v3.0/linux-x64": {
+      "Microsoft.NETCore.App.Internal/3.0.0-preview6-27804-01": {
+        "dependencies": {
+          "Microsoft.NETCore.DotNetHostPolicy": "3.0.0-preview6-27804-01",
+          "Microsoft.NETCore.Platforms": "3.0.0-preview6.19303.8",
+          "Microsoft.NETCore.Targets": "3.0.0-preview6.19303.8",
+          "NETStandard.Library": "2.1.0-prerelease.19281.5",
+          "runtime.linux-x64.Microsoft.NETCore.App": "3.0.0-preview6-27804-01"
+        }
+      },
+      "Microsoft.NETCore.DotNetHostPolicy/3.0.0-preview6-27804-01": {
+        "dependencies": {
+          "runtime.linux-x64.Microsoft.NETCore.DotNetHostPolicy": "3.0.0-preview6-27804-01"
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview6.19303.8": {},
+      "Microsoft.NETCore.Targets/3.0.0-preview6.19303.8": {},
+      "NETStandard.Library/2.1.0-prerelease.19281.5": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview6.19303.8"
+        }
+      },
+      "runtime.linux-x64.Microsoft.NETCore.App/3.0.0-preview6-27804-01": {
+        "runtime": {
+          "runtimes/linux-x64/lib/netcoreapp3.0/Microsoft.CSharp.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/Microsoft.VisualBasic.Core.dll": {
+            "assemblyVersion": "10.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/Microsoft.VisualBasic.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/Microsoft.Win32.Primitives.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/Microsoft.Win32.Registry.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/SOS.NETCore.dll": {
+            "assemblyVersion": "4.7.0.0",
+            "fileVersion": "4.700.19.30373"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.AppContext.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Buffers.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Collections.Concurrent.dll": {
+            "assemblyVersion": "4.0.14.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Collections.Immutable.dll": {
+            "assemblyVersion": "1.2.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Collections.NonGeneric.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Collections.Specialized.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Collections.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.ComponentModel.Annotations.dll": {
+            "assemblyVersion": "4.2.2.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.ComponentModel.DataAnnotations.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.ComponentModel.EventBasedAsync.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.ComponentModel.Primitives.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.ComponentModel.TypeConverter.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.ComponentModel.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Configuration.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Console.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Data.Common.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Data.DataSetExtensions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Data.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Diagnostics.Contracts.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Diagnostics.Debug.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Diagnostics.FileVersionInfo.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Diagnostics.Process.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Diagnostics.StackTrace.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Diagnostics.TextWriterTraceListener.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Diagnostics.Tools.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Diagnostics.TraceSource.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Diagnostics.Tracing.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Drawing.Primitives.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Drawing.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Dynamic.Runtime.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Globalization.Calendars.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Globalization.Extensions.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Globalization.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.Compression.Brotli.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.Compression.FileSystem.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.Compression.ZipFile.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.Compression.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.FileSystem.AccessControl.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.FileSystem.DriveInfo.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.FileSystem.Primitives.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.FileSystem.Watcher.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.FileSystem.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.IsolatedStorage.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.MemoryMappedFiles.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.Pipes.AccessControl.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.Pipes.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.UnmanagedMemoryStream.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.IO.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Linq.Expressions.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Linq.Parallel.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Linq.Queryable.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Linq.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Memory.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.Http.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.HttpListener.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.Mail.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.NameResolution.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.NetworkInformation.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.Ping.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.Primitives.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.Requests.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.Security.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.ServicePoint.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.Sockets.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.WebClient.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.WebHeaderCollection.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.WebProxy.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.WebSockets.Client.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.WebSockets.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Net.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Numerics.Vectors.dll": {
+            "assemblyVersion": "4.1.5.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Numerics.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.ObjectModel.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Private.DataContractSerialization.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Private.Uri.dll": {
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Private.Xml.Linq.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Private.Xml.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Reflection.DispatchProxy.dll": {
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Reflection.Emit.ILGeneration.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Reflection.Emit.Lightweight.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Reflection.Emit.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Reflection.Extensions.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Reflection.Metadata.dll": {
+            "assemblyVersion": "1.4.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Reflection.Primitives.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Reflection.TypeExtensions.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Reflection.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Resources.Reader.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Resources.ResourceManager.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Resources.Writer.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.0.0.0"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.CompilerServices.VisualC.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.Extensions.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.Handles.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.InteropServices.RuntimeInformation.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.InteropServices.WindowsRuntime.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.InteropServices.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.Intrinsics.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.Loader.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.Numerics.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.Serialization.Formatters.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.Serialization.Json.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.Serialization.Primitives.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.Serialization.Xml.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.Serialization.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.WindowsRuntime.UI.Xaml.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.WindowsRuntime.dll": {
+            "assemblyVersion": "4.0.14.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Runtime.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.AccessControl.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.Claims.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.Cryptography.Algorithms.dll": {
+            "assemblyVersion": "4.3.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {
+            "assemblyVersion": "4.3.2.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.Cryptography.Csp.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.Cryptography.Encoding.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.Cryptography.OpenSsl.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.Cryptography.Primitives.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.Cryptography.X509Certificates.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.Principal.Windows.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.Principal.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.SecureString.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Security.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.ServiceModel.Web.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.ServiceProcess.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Text.Encoding.Extensions.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Text.Encoding.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Text.Encodings.Web.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Text.Json.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Text.RegularExpressions.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Threading.Overlapped.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Threading.Tasks.Dataflow.dll": {
+            "assemblyVersion": "4.6.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Threading.Tasks.Extensions.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Threading.Tasks.Parallel.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Threading.Tasks.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Threading.Thread.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Threading.ThreadPool.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Threading.Timer.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Threading.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Transactions.Local.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Transactions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.ValueTuple.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Web.HttpUtility.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Web.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Windows.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Xml.Linq.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Xml.ReaderWriter.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Xml.Serialization.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Xml.XDocument.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Xml.XPath.XDocument.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Xml.XPath.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Xml.XmlDocument.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Xml.XmlSerializer.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.Xml.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/System.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/WindowsBase.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/mscorlib.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30308"
+          },
+          "runtimes/linux-x64/lib/netcoreapp3.0/netstandard.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "4.700.19.30308"
+          }
+        },
+        "native": {
+          "runtimes/linux-x64/native/System.Globalization.Native.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/System.IO.Compression.Native.a": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/System.IO.Compression.Native.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/System.Native.a": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/System.Native.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/System.Net.Http.Native.a": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/System.Net.Http.Native.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/System.Net.Security.Native.a": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/System.Net.Security.Native.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/System.Private.CoreLib.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.30373"
+          },
+          "runtimes/linux-x64/native/System.Security.Cryptography.Native.OpenSsl.a": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/System.Security.Cryptography.Native.OpenSsl.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/createdump": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libclrjit.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libcoreclr.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libcoreclrtraceptprovider.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libdbgshim.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libmscordaccore.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libmscordbi.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libsos.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libsosplugin.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/sosdocsunix.txt": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "runtime.linux-x64.Microsoft.NETCore.DotNetHostPolicy/3.0.0-preview6-27804-01": {
+        "native": {
+          "runtimes/linux-x64/native/libhostpolicy.so": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.NETCore.App.Internal/3.0.0-preview6-27804-01": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RAGKrZXpFJba0RFMjhNHJy3MxC1PahOBaz2+TtyIRDJQ32FKPkA0UW2sBDwtvd6/EipjMGaKyVpeKEkjpFuM6g==",
+      "path": "microsoft.netcore.app.internal/3.0.0-preview6-27804-01",
+      "hashPath": "microsoft.netcore.app.internal.3.0.0-preview6-27804-01.nupkg.sha512"
+    },
+    "Microsoft.NETCore.DotNetHostPolicy/3.0.0-preview6-27804-01": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-l5ByoZim0Y6VghCaM8PY86HHwvVffNZRmixMOOFop3yTnPInwPU3L5QrbJt4dMsIeSwWGd5aopsdDyWrOsWw+g=="
+    },
+    "Microsoft.NETCore.Platforms/3.0.0-preview6.19303.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3o5XcQtuScMJ4klhuZmPzyqDJxfdIu7I6MVT0sIm25h5Ak0x7r/XwdtMjzSmaf71NY0pqbRCmPhNNKNRWYBKHQ==",
+      "path": "microsoft.netcore.platforms/3.0.0-preview6.19303.8",
+      "hashPath": "microsoft.netcore.platforms.3.0.0-preview6.19303.8.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Targets/3.0.0-preview6.19303.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-He8a6UPEfZBy2NRk/i1Dm+dl+clWYhlvGcJxDdDVdjTDyaqy3MG3/zRwPNDN3YDA6SsuRZAi4tepiaYVqAKJsg==",
+      "path": "microsoft.netcore.targets/3.0.0-preview6.19303.8",
+      "hashPath": "microsoft.netcore.targets.3.0.0-preview6.19303.8.nupkg.sha512"
+    },
+    "NETStandard.Library/2.1.0-prerelease.19281.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TL8zt0ewSR1UCG7q/egVpN+DB19ebWfVvL60VayxCFN2/cHB/54Y5z42mpyob8HcLoJlJ27XXygGsoXpEhWNLA==",
+      "path": "netstandard.library/2.1.0-prerelease.19281.5",
+      "hashPath": "netstandard.library.2.1.0-prerelease.19281.5.nupkg.sha512"
+    },
+    "runtime.linux-x64.Microsoft.NETCore.App/3.0.0-preview6-27804-01": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dhFfzdyD+AZmFLknsAbFP6zOX1+CegGNkGn79O1+dr9xZbdyPiskcWeCUpjgKdJ5jl1cl51gkKEODCD9HoCgEg==",
+      "path": "runtime.linux-x64.microsoft.netcore.app/3.0.0-preview6-27804-01",
+      "hashPath": "runtime.linux-x64.microsoft.netcore.app.3.0.0-preview6-27804-01.nupkg.sha512"
+    },
+    "runtime.linux-x64.Microsoft.NETCore.DotNetHostPolicy/3.0.0-preview6-27804-01": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FrTM1CFn0K0f7sZXvVuc66Npendit+qSf/Fk2Q9lQ1uF28i94fqQtfXgWnb5AbxhYHTxPurttrEblJoI4klYBw=="
+    }
+  },
+  "runtimes": {
+    "linux-arm": [
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux-arm64": [
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux-musl-arm64": [
+      "linux-musl",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux-musl-x64": [
+      "linux-musl",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux-x64": [
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.6-x64": [
+      "rhel.6",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "tizen.4.0.0-armel": [
+      "tizen.4.0.0",
+      "tizen-armel",
+      "tizen",
+      "linux-armel",
+      "linux",
+      "unix-armel",
+      "unix",
+      "any",
+      "base"
+    ],
+    "tizen.5.0.0-armel": [
+      "tizen.5.0.0",
+      "tizen.4.0.0-armel",
+      "tizen.4.0.0",
+      "tizen-armel",
+      "tizen",
+      "linux-armel",
+      "linux",
+      "unix-armel",
+      "unix",
+      "any",
+      "base"
+    ],
+    "alpine": [
+      "linux-musl",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "alpine-x64": [
+      "alpine",
+      "linux-musl-x64",
+      "linux-musl",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "alpine.3.6": [
+      "alpine",
+      "linux-musl",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "alpine.3.6-x64": [
+      "alpine.3.6",
+      "alpine-x64",
+      "alpine",
+      "linux-musl-x64",
+      "linux-musl",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "alpine.3.7": [
+      "alpine.3.6",
+      "alpine",
+      "linux-musl",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "alpine.3.7-x64": [
+      "alpine.3.7",
+      "alpine.3.6-x64",
+      "alpine.3.6",
+      "alpine-x64",
+      "alpine",
+      "linux-musl-x64",
+      "linux-musl",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "alpine.3.8": [
+      "alpine.3.7",
+      "alpine.3.6",
+      "alpine",
+      "linux-musl",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "alpine.3.8-x64": [
+      "alpine.3.8",
+      "alpine.3.7-x64",
+      "alpine.3.7",
+      "alpine.3.6-x64",
+      "alpine.3.6",
+      "alpine-x64",
+      "alpine",
+      "linux-musl-x64",
+      "linux-musl",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "alpine.3.9": [
+      "alpine.3.8",
+      "alpine.3.7",
+      "alpine.3.6",
+      "alpine",
+      "linux-musl",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "alpine.3.9-x64": [
+      "alpine.3.9",
+      "alpine.3.8-x64",
+      "alpine.3.8",
+      "alpine.3.7-x64",
+      "alpine.3.7",
+      "alpine.3.6-x64",
+      "alpine.3.6",
+      "alpine-x64",
+      "alpine",
+      "linux-musl-x64",
+      "linux-musl",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "android": [
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "android-arm": [
+      "android",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "android-arm64": [
+      "android",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "android.21": [
+      "android",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "android.21-arm": [
+      "android.21",
+      "android-arm",
+      "android",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "android.21-arm64": [
+      "android.21",
+      "android-arm64",
+      "android",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "centos": [
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "centos-x64": [
+      "centos",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "centos.7": [
+      "centos",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "centos.7-x64": [
+      "centos.7",
+      "centos-x64",
+      "rhel.7-x64",
+      "centos",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian": [
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian-arm": [
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian-arm64": [
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian-armel": [
+      "debian",
+      "linux-armel",
+      "linux",
+      "unix-armel",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian-x64": [
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian-x86": [
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.10": [
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.10-arm": [
+      "debian.10",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.10-arm64": [
+      "debian.10",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.10-armel": [
+      "debian.10",
+      "debian-armel",
+      "debian",
+      "linux-armel",
+      "linux",
+      "unix-armel",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.10-x64": [
+      "debian.10",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.10-x86": [
+      "debian.10",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.8": [
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.8-arm": [
+      "debian.8",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.8-arm64": [
+      "debian.8",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.8-armel": [
+      "debian.8",
+      "debian-armel",
+      "debian",
+      "linux-armel",
+      "linux",
+      "unix-armel",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.8-x64": [
+      "debian.8",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.8-x86": [
+      "debian.8",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.9": [
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.9-arm": [
+      "debian.9",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.9-arm64": [
+      "debian.9",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.9-armel": [
+      "debian.9",
+      "debian-armel",
+      "debian",
+      "linux-armel",
+      "linux",
+      "unix-armel",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.9-x64": [
+      "debian.9",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "debian.9-x86": [
+      "debian.9",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora": [
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora-x64": [
+      "fedora",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.23": [
+      "fedora",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.23-x64": [
+      "fedora.23",
+      "fedora-x64",
+      "fedora",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.24": [
+      "fedora",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.24-x64": [
+      "fedora.24",
+      "fedora-x64",
+      "fedora",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.25": [
+      "fedora",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.25-x64": [
+      "fedora.25",
+      "fedora-x64",
+      "fedora",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.26": [
+      "fedora",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.26-x64": [
+      "fedora.26",
+      "fedora-x64",
+      "fedora",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.27": [
+      "fedora",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.27-x64": [
+      "fedora.27",
+      "fedora-x64",
+      "fedora",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.28": [
+      "fedora",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.28-x64": [
+      "fedora.28",
+      "fedora-x64",
+      "fedora",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.29": [
+      "fedora",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.29-x64": [
+      "fedora.29",
+      "fedora-x64",
+      "fedora",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.30": [
+      "fedora",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.30-x64": [
+      "fedora.30",
+      "fedora-x64",
+      "fedora",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.31": [
+      "fedora",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "fedora.31-x64": [
+      "fedora.31",
+      "fedora-x64",
+      "fedora",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "gentoo": [
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "gentoo-x64": [
+      "gentoo",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux": [
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux-armel": [
+      "linux",
+      "unix-armel",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux-musl": [
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux-musl-arm": [
+      "linux-musl",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux-musl-armel": [
+      "linux-musl",
+      "linux-armel",
+      "linux",
+      "unix-armel",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux-musl-x86": [
+      "linux-musl",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linux-x86": [
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.17": [
+      "ubuntu.14.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.17-x64": [
+      "linuxmint.17",
+      "ubuntu.14.04-x64",
+      "ubuntu.14.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.17.1": [
+      "linuxmint.17",
+      "ubuntu.14.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.17.1-x64": [
+      "linuxmint.17.1",
+      "linuxmint.17-x64",
+      "linuxmint.17",
+      "ubuntu.14.04-x64",
+      "ubuntu.14.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.17.2": [
+      "linuxmint.17.1",
+      "linuxmint.17",
+      "ubuntu.14.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.17.2-x64": [
+      "linuxmint.17.2",
+      "linuxmint.17.1-x64",
+      "linuxmint.17.1",
+      "linuxmint.17-x64",
+      "linuxmint.17",
+      "ubuntu.14.04-x64",
+      "ubuntu.14.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.17.3": [
+      "linuxmint.17.2",
+      "linuxmint.17.1",
+      "linuxmint.17",
+      "ubuntu.14.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.17.3-x64": [
+      "linuxmint.17.3",
+      "linuxmint.17.2-x64",
+      "linuxmint.17.2",
+      "linuxmint.17.1-x64",
+      "linuxmint.17.1",
+      "linuxmint.17-x64",
+      "linuxmint.17",
+      "ubuntu.14.04-x64",
+      "ubuntu.14.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.18": [
+      "ubuntu.16.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.18-x64": [
+      "linuxmint.18",
+      "ubuntu.16.04-x64",
+      "ubuntu.16.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.18.1": [
+      "linuxmint.18",
+      "ubuntu.16.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.18.1-x64": [
+      "linuxmint.18.1",
+      "linuxmint.18-x64",
+      "linuxmint.18",
+      "ubuntu.16.04-x64",
+      "ubuntu.16.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.18.2": [
+      "linuxmint.18.1",
+      "linuxmint.18",
+      "ubuntu.16.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.18.2-x64": [
+      "linuxmint.18.2",
+      "linuxmint.18.1-x64",
+      "linuxmint.18.1",
+      "linuxmint.18-x64",
+      "linuxmint.18",
+      "ubuntu.16.04-x64",
+      "ubuntu.16.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.18.3": [
+      "linuxmint.18.2",
+      "linuxmint.18.1",
+      "linuxmint.18",
+      "ubuntu.16.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.18.3-x64": [
+      "linuxmint.18.3",
+      "linuxmint.18.2-x64",
+      "linuxmint.18.2",
+      "linuxmint.18.1-x64",
+      "linuxmint.18.1",
+      "linuxmint.18-x64",
+      "linuxmint.18",
+      "ubuntu.16.04-x64",
+      "ubuntu.16.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.19": [
+      "ubuntu.18.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.19-x64": [
+      "linuxmint.19",
+      "ubuntu.18.04-x64",
+      "ubuntu.18.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.19.1": [
+      "linuxmint.19",
+      "ubuntu.18.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.19.1-x64": [
+      "linuxmint.19.1",
+      "linuxmint.19-x64",
+      "linuxmint.19",
+      "ubuntu.18.04-x64",
+      "ubuntu.18.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.19.2": [
+      "linuxmint.19.1",
+      "linuxmint.19",
+      "ubuntu.18.04",
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "linuxmint.19.2-x64": [
+      "linuxmint.19.2",
+      "linuxmint.19.1-x64",
+      "linuxmint.19.1",
+      "linuxmint.19-x64",
+      "linuxmint.19",
+      "ubuntu.18.04-x64",
+      "ubuntu.18.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol": [
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol-x64": [
+      "ol",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7": [
+      "ol",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7-x64": [
+      "ol.7",
+      "ol-x64",
+      "rhel.7-x64",
+      "ol",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.0": [
+      "ol.7",
+      "rhel.7.0",
+      "ol",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.0-x64": [
+      "ol.7.0",
+      "ol.7-x64",
+      "rhel.7.0-x64",
+      "ol.7",
+      "rhel.7.0",
+      "ol-x64",
+      "rhel.7-x64",
+      "ol",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.1": [
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7",
+      "rhel.7.0",
+      "ol",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.1-x64": [
+      "ol.7.1",
+      "ol.7.0-x64",
+      "rhel.7.1-x64",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7-x64",
+      "rhel.7.0-x64",
+      "ol.7",
+      "rhel.7.0",
+      "ol-x64",
+      "rhel.7-x64",
+      "ol",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.2": [
+      "ol.7.1",
+      "rhel.7.2",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7",
+      "rhel.7.0",
+      "ol",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.2-x64": [
+      "ol.7.2",
+      "ol.7.1-x64",
+      "rhel.7.2-x64",
+      "ol.7.1",
+      "rhel.7.2",
+      "ol.7.0-x64",
+      "rhel.7.1-x64",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7-x64",
+      "rhel.7.0-x64",
+      "ol.7",
+      "rhel.7.0",
+      "ol-x64",
+      "rhel.7-x64",
+      "ol",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.3": [
+      "ol.7.2",
+      "rhel.7.3",
+      "ol.7.1",
+      "rhel.7.2",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7",
+      "rhel.7.0",
+      "ol",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.3-x64": [
+      "ol.7.3",
+      "ol.7.2-x64",
+      "rhel.7.3-x64",
+      "ol.7.2",
+      "rhel.7.3",
+      "ol.7.1-x64",
+      "rhel.7.2-x64",
+      "ol.7.1",
+      "rhel.7.2",
+      "ol.7.0-x64",
+      "rhel.7.1-x64",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7-x64",
+      "rhel.7.0-x64",
+      "ol.7",
+      "rhel.7.0",
+      "ol-x64",
+      "rhel.7-x64",
+      "ol",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.4": [
+      "ol.7.3",
+      "rhel.7.4",
+      "ol.7.2",
+      "rhel.7.3",
+      "ol.7.1",
+      "rhel.7.2",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7",
+      "rhel.7.0",
+      "ol",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.4-x64": [
+      "ol.7.4",
+      "ol.7.3-x64",
+      "rhel.7.4-x64",
+      "ol.7.3",
+      "rhel.7.4",
+      "ol.7.2-x64",
+      "rhel.7.3-x64",
+      "ol.7.2",
+      "rhel.7.3",
+      "ol.7.1-x64",
+      "rhel.7.2-x64",
+      "ol.7.1",
+      "rhel.7.2",
+      "ol.7.0-x64",
+      "rhel.7.1-x64",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7-x64",
+      "rhel.7.0-x64",
+      "ol.7",
+      "rhel.7.0",
+      "ol-x64",
+      "rhel.7-x64",
+      "ol",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.5": [
+      "ol.7.4",
+      "rhel.7.5",
+      "ol.7.3",
+      "rhel.7.4",
+      "ol.7.2",
+      "rhel.7.3",
+      "ol.7.1",
+      "rhel.7.2",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7",
+      "rhel.7.0",
+      "ol",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.5-x64": [
+      "ol.7.5",
+      "ol.7.4-x64",
+      "rhel.7.5-x64",
+      "ol.7.4",
+      "rhel.7.5",
+      "ol.7.3-x64",
+      "rhel.7.4-x64",
+      "ol.7.3",
+      "rhel.7.4",
+      "ol.7.2-x64",
+      "rhel.7.3-x64",
+      "ol.7.2",
+      "rhel.7.3",
+      "ol.7.1-x64",
+      "rhel.7.2-x64",
+      "ol.7.1",
+      "rhel.7.2",
+      "ol.7.0-x64",
+      "rhel.7.1-x64",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7-x64",
+      "rhel.7.0-x64",
+      "ol.7",
+      "rhel.7.0",
+      "ol-x64",
+      "rhel.7-x64",
+      "ol",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.6": [
+      "ol.7.5",
+      "rhel.7.6",
+      "ol.7.4",
+      "rhel.7.5",
+      "ol.7.3",
+      "rhel.7.4",
+      "ol.7.2",
+      "rhel.7.3",
+      "ol.7.1",
+      "rhel.7.2",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7",
+      "rhel.7.0",
+      "ol",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.7.6-x64": [
+      "ol.7.6",
+      "ol.7.5-x64",
+      "rhel.7.6-x64",
+      "ol.7.5",
+      "rhel.7.6",
+      "ol.7.4-x64",
+      "rhel.7.5-x64",
+      "ol.7.4",
+      "rhel.7.5",
+      "ol.7.3-x64",
+      "rhel.7.4-x64",
+      "ol.7.3",
+      "rhel.7.4",
+      "ol.7.2-x64",
+      "rhel.7.3-x64",
+      "ol.7.2",
+      "rhel.7.3",
+      "ol.7.1-x64",
+      "rhel.7.2-x64",
+      "ol.7.1",
+      "rhel.7.2",
+      "ol.7.0-x64",
+      "rhel.7.1-x64",
+      "ol.7.0",
+      "rhel.7.1",
+      "ol.7-x64",
+      "rhel.7.0-x64",
+      "ol.7",
+      "rhel.7.0",
+      "ol-x64",
+      "rhel.7-x64",
+      "ol",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.8": [
+      "ol",
+      "rhel.8",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.8-x64": [
+      "ol.8",
+      "ol-x64",
+      "rhel.8-x64",
+      "ol",
+      "rhel.8",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.8.0": [
+      "ol.8",
+      "rhel.8.0",
+      "ol",
+      "rhel.8",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ol.8.0-x64": [
+      "ol.8.0",
+      "ol.8-x64",
+      "rhel.8.0-x64",
+      "ol.8",
+      "rhel.8.0",
+      "ol-x64",
+      "rhel.8-x64",
+      "ol",
+      "rhel.8",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse": [
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse-x64": [
+      "opensuse",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.13.2": [
+      "opensuse",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.13.2-x64": [
+      "opensuse.13.2",
+      "opensuse-x64",
+      "opensuse",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.15.0": [
+      "opensuse",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.15.0-x64": [
+      "opensuse.15.0",
+      "opensuse-x64",
+      "opensuse",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.15.1": [
+      "opensuse",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.15.1-x64": [
+      "opensuse.15.1",
+      "opensuse-x64",
+      "opensuse",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.42.1": [
+      "opensuse",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.42.1-x64": [
+      "opensuse.42.1",
+      "opensuse-x64",
+      "opensuse",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.42.2": [
+      "opensuse",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.42.2-x64": [
+      "opensuse.42.2",
+      "opensuse-x64",
+      "opensuse",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.42.3": [
+      "opensuse",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "opensuse.42.3-x64": [
+      "opensuse.42.3",
+      "opensuse-x64",
+      "opensuse",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel": [
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel-x64": [
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.6": [
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7": [
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7-x64": [
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.0": [
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.0-x64": [
+      "rhel.7.0",
+      "rhel.7-x64",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.1": [
+      "rhel.7.0",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.1-x64": [
+      "rhel.7.1",
+      "rhel.7.0-x64",
+      "rhel.7.0",
+      "rhel.7-x64",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.2": [
+      "rhel.7.1",
+      "rhel.7.0",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.2-x64": [
+      "rhel.7.2",
+      "rhel.7.1-x64",
+      "rhel.7.1",
+      "rhel.7.0-x64",
+      "rhel.7.0",
+      "rhel.7-x64",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.3": [
+      "rhel.7.2",
+      "rhel.7.1",
+      "rhel.7.0",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.3-x64": [
+      "rhel.7.3",
+      "rhel.7.2-x64",
+      "rhel.7.2",
+      "rhel.7.1-x64",
+      "rhel.7.1",
+      "rhel.7.0-x64",
+      "rhel.7.0",
+      "rhel.7-x64",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.4": [
+      "rhel.7.3",
+      "rhel.7.2",
+      "rhel.7.1",
+      "rhel.7.0",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.4-x64": [
+      "rhel.7.4",
+      "rhel.7.3-x64",
+      "rhel.7.3",
+      "rhel.7.2-x64",
+      "rhel.7.2",
+      "rhel.7.1-x64",
+      "rhel.7.1",
+      "rhel.7.0-x64",
+      "rhel.7.0",
+      "rhel.7-x64",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.5": [
+      "rhel.7.4",
+      "rhel.7.3",
+      "rhel.7.2",
+      "rhel.7.1",
+      "rhel.7.0",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.5-x64": [
+      "rhel.7.5",
+      "rhel.7.4-x64",
+      "rhel.7.4",
+      "rhel.7.3-x64",
+      "rhel.7.3",
+      "rhel.7.2-x64",
+      "rhel.7.2",
+      "rhel.7.1-x64",
+      "rhel.7.1",
+      "rhel.7.0-x64",
+      "rhel.7.0",
+      "rhel.7-x64",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.6": [
+      "rhel.7.5",
+      "rhel.7.4",
+      "rhel.7.3",
+      "rhel.7.2",
+      "rhel.7.1",
+      "rhel.7.0",
+      "rhel.7",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.7.6-x64": [
+      "rhel.7.6",
+      "rhel.7.5-x64",
+      "rhel.7.5",
+      "rhel.7.4-x64",
+      "rhel.7.4",
+      "rhel.7.3-x64",
+      "rhel.7.3",
+      "rhel.7.2-x64",
+      "rhel.7.2",
+      "rhel.7.1-x64",
+      "rhel.7.1",
+      "rhel.7.0-x64",
+      "rhel.7.0",
+      "rhel.7-x64",
+      "rhel.7",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.8": [
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.8-x64": [
+      "rhel.8",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.8.0": [
+      "rhel.8",
+      "rhel",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "rhel.8.0-x64": [
+      "rhel.8.0",
+      "rhel.8-x64",
+      "rhel.8",
+      "rhel-x64",
+      "rhel",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles": [
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles-x64": [
+      "sles",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.12": [
+      "sles",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.12-x64": [
+      "sles.12",
+      "sles-x64",
+      "sles",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.12.1": [
+      "sles.12",
+      "sles",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.12.1-x64": [
+      "sles.12.1",
+      "sles.12-x64",
+      "sles.12",
+      "sles-x64",
+      "sles",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.12.2": [
+      "sles.12.1",
+      "sles.12",
+      "sles",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.12.2-x64": [
+      "sles.12.2",
+      "sles.12.1-x64",
+      "sles.12.1",
+      "sles.12-x64",
+      "sles.12",
+      "sles-x64",
+      "sles",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.12.3": [
+      "sles.12.2",
+      "sles.12.1",
+      "sles.12",
+      "sles",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.12.3-x64": [
+      "sles.12.3",
+      "sles.12.2-x64",
+      "sles.12.2",
+      "sles.12.1-x64",
+      "sles.12.1",
+      "sles.12-x64",
+      "sles.12",
+      "sles-x64",
+      "sles",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.12.4": [
+      "sles.12.3",
+      "sles.12.2",
+      "sles.12.1",
+      "sles.12",
+      "sles",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.12.4-x64": [
+      "sles.12.4",
+      "sles.12.3-x64",
+      "sles.12.3",
+      "sles.12.2-x64",
+      "sles.12.2",
+      "sles.12.1-x64",
+      "sles.12.1",
+      "sles.12-x64",
+      "sles.12",
+      "sles-x64",
+      "sles",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.15": [
+      "sles.12.4",
+      "sles.12.3",
+      "sles.12.2",
+      "sles.12.1",
+      "sles.12",
+      "sles",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.15-x64": [
+      "sles.15",
+      "sles.12.4-x64",
+      "sles.12.4",
+      "sles.12.3-x64",
+      "sles.12.3",
+      "sles.12.2-x64",
+      "sles.12.2",
+      "sles.12.1-x64",
+      "sles.12.1",
+      "sles.12-x64",
+      "sles.12",
+      "sles-x64",
+      "sles",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.15.1": [
+      "sles.15",
+      "sles.12.4",
+      "sles.12.3",
+      "sles.12.2",
+      "sles.12.1",
+      "sles.12",
+      "sles",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "sles.15.1-x64": [
+      "sles.15.1",
+      "sles.15-x64",
+      "sles.15",
+      "sles.12.4-x64",
+      "sles.12.4",
+      "sles.12.3-x64",
+      "sles.12.3",
+      "sles.12.2-x64",
+      "sles.12.2",
+      "sles.12.1-x64",
+      "sles.12.1",
+      "sles.12-x64",
+      "sles.12",
+      "sles-x64",
+      "sles",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "tizen": [
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "tizen-armel": [
+      "tizen",
+      "linux-armel",
+      "linux",
+      "unix-armel",
+      "unix",
+      "any",
+      "base"
+    ],
+    "tizen-x86": [
+      "tizen",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "tizen.4.0.0": [
+      "tizen",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "tizen.4.0.0-x86": [
+      "tizen.4.0.0",
+      "tizen-x86",
+      "tizen",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "tizen.5.0.0": [
+      "tizen.4.0.0",
+      "tizen",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "tizen.5.0.0-x86": [
+      "tizen.5.0.0",
+      "tizen.4.0.0-x86",
+      "tizen.4.0.0",
+      "tizen-x86",
+      "tizen",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu": [
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu-arm": [
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu-arm64": [
+      "ubuntu",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu-x64": [
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu-x86": [
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.14.04": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.14.04-arm": [
+      "ubuntu.14.04",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.14.04-x64": [
+      "ubuntu.14.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.14.04-x86": [
+      "ubuntu.14.04",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.14.10": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.14.10-arm": [
+      "ubuntu.14.10",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.14.10-x64": [
+      "ubuntu.14.10",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.14.10-x86": [
+      "ubuntu.14.10",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.15.04": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.15.04-arm": [
+      "ubuntu.15.04",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.15.04-x64": [
+      "ubuntu.15.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.15.04-x86": [
+      "ubuntu.15.04",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.15.10": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.15.10-arm": [
+      "ubuntu.15.10",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.15.10-x64": [
+      "ubuntu.15.10",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.15.10-x86": [
+      "ubuntu.15.10",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.16.04": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.16.04-arm": [
+      "ubuntu.16.04",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.16.04-arm64": [
+      "ubuntu.16.04",
+      "ubuntu-arm64",
+      "ubuntu",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.16.04-x64": [
+      "ubuntu.16.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.16.04-x86": [
+      "ubuntu.16.04",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.16.10": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.16.10-arm": [
+      "ubuntu.16.10",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.16.10-arm64": [
+      "ubuntu.16.10",
+      "ubuntu-arm64",
+      "ubuntu",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.16.10-x64": [
+      "ubuntu.16.10",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.16.10-x86": [
+      "ubuntu.16.10",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.17.04": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.17.04-arm": [
+      "ubuntu.17.04",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.17.04-arm64": [
+      "ubuntu.17.04",
+      "ubuntu-arm64",
+      "ubuntu",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.17.04-x64": [
+      "ubuntu.17.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.17.04-x86": [
+      "ubuntu.17.04",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.17.10": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.17.10-arm": [
+      "ubuntu.17.10",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.17.10-arm64": [
+      "ubuntu.17.10",
+      "ubuntu-arm64",
+      "ubuntu",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.17.10-x64": [
+      "ubuntu.17.10",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.17.10-x86": [
+      "ubuntu.17.10",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.18.04": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.18.04-arm": [
+      "ubuntu.18.04",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.18.04-arm64": [
+      "ubuntu.18.04",
+      "ubuntu-arm64",
+      "ubuntu",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.18.04-x64": [
+      "ubuntu.18.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.18.04-x86": [
+      "ubuntu.18.04",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.18.10": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.18.10-arm": [
+      "ubuntu.18.10",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.18.10-arm64": [
+      "ubuntu.18.10",
+      "ubuntu-arm64",
+      "ubuntu",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.18.10-x64": [
+      "ubuntu.18.10",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.18.10-x86": [
+      "ubuntu.18.10",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.19.04": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.19.04-arm": [
+      "ubuntu.19.04",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.19.04-arm64": [
+      "ubuntu.19.04",
+      "ubuntu-arm64",
+      "ubuntu",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.19.04-x64": [
+      "ubuntu.19.04",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.19.04-x86": [
+      "ubuntu.19.04",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.19.10": [
+      "ubuntu",
+      "debian",
+      "linux",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.19.10-arm": [
+      "ubuntu.19.10",
+      "ubuntu-arm",
+      "ubuntu",
+      "debian-arm",
+      "debian",
+      "linux-arm",
+      "linux",
+      "unix-arm",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.19.10-arm64": [
+      "ubuntu.19.10",
+      "ubuntu-arm64",
+      "ubuntu",
+      "debian-arm64",
+      "debian",
+      "linux-arm64",
+      "linux",
+      "unix-arm64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.19.10-x64": [
+      "ubuntu.19.10",
+      "ubuntu-x64",
+      "ubuntu",
+      "debian-x64",
+      "debian",
+      "linux-x64",
+      "linux",
+      "unix-x64",
+      "unix",
+      "any",
+      "base"
+    ],
+    "ubuntu.19.10-x86": [
+      "ubuntu.19.10",
+      "ubuntu-x86",
+      "ubuntu",
+      "debian-x86",
+      "debian",
+      "linux-x86",
+      "linux",
+      "unix-x86",
+      "unix",
+      "any",
+      "base"
+    ]
+  }
+}

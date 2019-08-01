@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AspNetCore.Mvc.Components.Prerendering</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperComponentPrerenderingExtensions">
+            <summary>
+            Extensions for rendering components.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperComponentPrerenderingExtensions.RenderComponentAsync``1(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper)">
+            <summary>
+            Renders the <typeparamref name="TComponent"/> <see cref="T:Microsoft.AspNetCore.Components.IComponent"/>.
+            </summary>
+            <param name="htmlHelper">The <see cref="T:Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper"/>.</param>
+            <returns>The HTML produced by the rendered <typeparamref name="TComponent"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperComponentPrerenderingExtensions.RenderComponentAsync``1(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,System.Object)">
+            <summary>
+            Renders the <typeparamref name="TComponent"/> <see cref="T:Microsoft.AspNetCore.Components.IComponent"/>.
+            </summary>
+            <param name="htmlHelper">The <see cref="T:Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper"/>.</param>
+            <param name="parameters">An <see cref="T:System.Object"/> containing the parameters to pass
+            to the component.</param>
+            <returns>The HTML produced by the rendered <typeparamref name="TComponent"/>.</returns>
+        </member>
+    </members>
+</doc>

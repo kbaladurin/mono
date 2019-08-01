@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.JSInterop</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.JSInterop.DotNetDispatcher">
+            <summary>
+            Provides methods that receive incoming calls from JS to .NET.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetDispatcher.Invoke(System.String,System.String,System.Int64,System.String)">
+            <summary>
+            Receives a call from JS to .NET, locating and invoking the specified method.
+            </summary>
+            <param name="assemblyName">The assembly containing the method to be invoked.</param>
+            <param name="methodIdentifier">The identifier of the method to be invoked. The method must be annotated with a <see cref="T:Microsoft.JSInterop.JSInvokableAttribute"/> matching this identifier string.</param>
+            <param name="dotNetObjectId">For instance method calls, identifies the target object.</param>
+            <param name="argsJson">A JSON representation of the parameters.</param>
+            <returns>A JSON representation of the return value, or null.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetDispatcher.BeginInvoke(System.String,System.String,System.String,System.Int64,System.String)">
+            <summary>
+            Receives a call from JS to .NET, locating and invoking the specified method asynchronously.
+            </summary>
+            <param name="callId">A value identifying the asynchronous call that should be passed back with the result, or null if no result notification is required.</param>
+            <param name="assemblyName">The assembly containing the method to be invoked.</param>
+            <param name="methodIdentifier">The identifier of the method to be invoked. The method must be annotated with a <see cref="T:Microsoft.JSInterop.JSInvokableAttribute"/> matching this identifier string.</param>
+            <param name="dotNetObjectId">For instance method calls, identifies the target object.</param>
+            <param name="argsJson">A JSON representation of the parameters.</param>
+            <returns>A JSON representation of the return value, or null.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetDispatcher.EndInvoke(System.Int64,System.Boolean,Microsoft.JSInterop.Internal.JSAsyncCallResult)">
+            <summary>
+            Receives notification that a call from .NET to JS has finished, marking the
+            associated <see cref="T:System.Threading.Tasks.Task"/> as completed.
+            </summary>
+            <param name="asyncHandle">The identifier for the function invocation.</param>
+            <param name="succeeded">A flag to indicate whether the invocation succeeded.</param>
+            <param name="result">If <paramref name="succeeded"/> is <c>true</c>, specifies the invocation result. If <paramref name="succeeded"/> is <c>false</c>, gives the <see cref="T:System.Exception"/> corresponding to the invocation failure.</param>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetDispatcher.ReleaseDotNetObject(System.Int64)">
+             <summary>
+             Releases the reference to the specified .NET object. This allows the .NET runtime
+             to garbage collect that object if there are no other references to it.
+            
+             To avoid leaking memory, the JavaScript side code must call this for every .NET
+             object it obtains a reference to. The exception is if that object is used for
+             the entire lifetime of a given user's session, in which case it is released
+             automatically when the JavaScript runtime is disposed.
+             </summary>
+             <param name="dotNetObjectId">The identifier previously passed to JavaScript code.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.DotNetObjectRef">
+            <summary>
+            Provides convenience methods to produce a <see cref="T:Microsoft.JSInterop.DotNetObjectRef`1" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetObjectRef.Create``1(``0)">
+            <summary>
+            Creates a new instance of <see cref="T:Microsoft.JSInterop.DotNetObjectRef`1" />.
+            </summary>
+            <param name="value">The reference type to track.</param>
+            <returns>An instance of <see cref="T:Microsoft.JSInterop.DotNetObjectRef`1" />.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetObjectRefManager.ReleaseDotNetObject(System.Int64)">
+            <summary>
+            Stops tracking the specified .NET object reference.
+            This may be invoked either by disposing a DotNetObjectRef in .NET code, or via JS interop by calling "dispose" on the corresponding instance in JavaScript code
+            </summary>
+            <param name="dotNetObjectId">The ID of the <see cref="T:Microsoft.JSInterop.DotNetObjectRef`1"/>.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.DotNetObjectRef`1">
+             <summary>
+             Wraps a JS interop argument, indicating that the value should not be serialized as JSON
+             but instead should be passed as a reference.
+            
+             To avoid leaking memory, the reference must later be disposed by JS code or by .NET code.
+             </summary>
+             <typeparam name="TValue">The type of the value to wrap.</typeparam>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetObjectRef`1.#ctor">
+            <summary>
+            This API is for meant for JSON deserialization and should not be used by user code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetObjectRef`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.JSInterop.DotNetObjectRef`1" />.
+            </summary>
+            <param name="value">The value to pass by reference.</param>
+        </member>
+        <member name="P:Microsoft.JSInterop.DotNetObjectRef`1.Value">
+            <summary>
+            Gets the object instance represented by this wrapper.
+            </summary>
+        </member>
+        <member name="P:Microsoft.JSInterop.DotNetObjectRef`1.__dotNetObject">
+            <summary>
+            This API is for meant for JSON serialization and should not be used by user code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetObjectRef`1.Dispose">
+            <summary>
+            Stops tracking this object reference, allowing it to be garbage collected
+            (if there are no other references to it). Once the instance is disposed, it
+            can no longer be used in interop calls from JavaScript code.
+            </summary>
+        </member>
+        <member name="T:Microsoft.JSInterop.IJSInProcessRuntime">
+            <summary>
+            Represents an instance of a JavaScript runtime to which calls may be dispatched.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.IJSInProcessRuntime.Invoke``1(System.String,System.Object[])">
+            <summary>
+            Invokes the specified JavaScript function synchronously.
+            </summary>
+            <typeparam name="T">The JSON-serializable return type.</typeparam>
+            <param name="identifier">An identifier for the function to invoke. For example, the value <code>"someScope.someFunction"</code> will invoke the function <code>window.someScope.someFunction</code>.</param>
+            <param name="args">JSON-serializable arguments.</param>
+            <returns>An instance of <typeparamref name="T"/> obtained by JSON-deserializing the return value.</returns>
+        </member>
+        <member name="T:Microsoft.JSInterop.IJSRuntime">
+            <summary>
+            Represents an instance of a JavaScript runtime to which calls may be dispatched.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.IJSRuntime.InvokeAsync``1(System.String,System.Object[])">
+            <summary>
+            Invokes the specified JavaScript function asynchronously.
+            </summary>
+            <typeparam name="TValue">The JSON-serializable return type.</typeparam>
+            <param name="identifier">An identifier for the function to invoke. For example, the value <code>"someScope.someFunction"</code> will invoke the function <code>window.someScope.someFunction</code>.</param>
+            <param name="args">JSON-serializable arguments.</param>
+            <returns>An instance of <typeparamref name="TValue"/> obtained by JSON-deserializing the return value.</returns>
+        </member>
+        <member name="T:Microsoft.JSInterop.Internal.JSAsyncCallResult">
+            <summary>
+            Intended for framework use only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.JSInterop.JSException">
+            <summary>
+            Represents errors that occur during an interop call from .NET to JavaScript.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSException.#ctor(System.String)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.JSInterop.JSException"/>.
+            </summary>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.JSInProcessRuntimeBase">
+            <summary>
+            Abstract base class for an in-process JavaScript runtime.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSInProcessRuntimeBase.Invoke``1(System.String,System.Object[])">
+            <summary>
+            Invokes the specified JavaScript function synchronously.
+            </summary>
+            <typeparam name="TValue">The JSON-serializable return type.</typeparam>
+            <param name="identifier">An identifier for the function to invoke. For example, the value <code>"someScope.someFunction"</code> will invoke the function <code>window.someScope.someFunction</code>.</param>
+            <param name="args">JSON-serializable arguments.</param>
+            <returns>An instance of <typeparamref name="TValue"/> obtained by JSON-deserializing the return value.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSInProcessRuntimeBase.InvokeJS(System.String,System.String)">
+            <summary>
+            Performs a synchronous function invocation.
+            </summary>
+            <param name="identifier">The identifier for the function to invoke.</param>
+            <param name="argsJson">A JSON representation of the arguments.</param>
+            <returns>A JSON representation of the result.</returns>
+        </member>
+        <member name="T:Microsoft.JSInterop.JSInvokableAttribute">
+            <summary>
+            Identifies a .NET method as allowing invocation from JavaScript code.
+            Any method marked with this attribute may receive arbitrary parameter values
+            from untrusted callers. All inputs should be validated carefully.
+            </summary>
+        </member>
+        <member name="P:Microsoft.JSInterop.JSInvokableAttribute.Identifier">
+             <summary>
+             Gets the identifier for the method. The identifier must be unique within the scope
+             of an assembly.
+            
+             If not set, the identifier is taken from the name of the method. In this case the
+             method name must be unique within the assembly.
+             </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSInvokableAttribute.#ctor">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.JSInterop.JSInvokableAttribute"/> without setting
+            an identifier for the method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSInvokableAttribute.#ctor(System.String)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.JSInterop.JSInvokableAttribute"/> using the specified
+            identifier.
+            </summary>
+            <param name="identifier">An identifier for the method, which must be unique within the scope of the assembly.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.JSRuntime">
+            <summary>
+            Provides mechanisms for accessing the current <see cref="T:Microsoft.JSInterop.IJSRuntime"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSRuntime.SetCurrentJSRuntime(Microsoft.JSInterop.IJSRuntime)">
+             <summary>
+             Sets the current JS runtime to the supplied instance.
+            
+             This is intended for framework use. Developers should not normally need to call this method.
+             </summary>
+             <param name="instance">The new current <see cref="T:Microsoft.JSInterop.IJSRuntime"/>.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.JSRuntimeBase">
+            <summary>
+            Abstract base class for a JavaScript runtime.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSRuntimeBase.InvokeAsync``1(System.String,System.Object[])">
+            <summary>
+            Invokes the specified JavaScript function asynchronously.
+            </summary>
+            <typeparam name="T">The JSON-serializable return type.</typeparam>
+            <param name="identifier">An identifier for the function to invoke. For example, the value <code>"someScope.someFunction"</code> will invoke the function <code>window.someScope.someFunction</code>.</param>
+            <param name="args">JSON-serializable arguments.</param>
+            <returns>An instance of <typeparamref name="T"/> obtained by JSON-deserializing the return value.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSRuntimeBase.BeginInvokeJS(System.Int64,System.String,System.String)">
+            <summary>
+            Begins an asynchronous function invocation.
+            </summary>
+            <param name="asyncHandle">The identifier for the function invocation, or zero if no async callback is required.</param>
+            <param name="identifier">The identifier for the function to invoke.</param>
+            <param name="argsJson">A JSON representation of the arguments.</param>
+        </member>
+    </members>
+</doc>
