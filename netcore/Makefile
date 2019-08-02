@@ -182,3 +182,5 @@ xunit-summary:
 endif
 
 distdir:
+
+install:
