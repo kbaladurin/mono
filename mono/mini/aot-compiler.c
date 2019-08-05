@@ -5214,6 +5214,7 @@ add_generic_class_with_depth (MonoAotCompile *acfg, MonoClass *klass, int depth,
 		else
 			name_prefix = g_strdup_printf ("%s.%s", klass_name_space, klass_name);
 
+#ifndef ENABLE_NETCORE
 		/* Add the T[]/InternalEnumerator class */
 		if (!strcmp (klass_name, "IEnumerable`1") || !strcmp (klass_name, "IEnumerator`1")) {
 			ERROR_DECL (error);
@@ -5229,7 +5230,7 @@ add_generic_class_with_depth (MonoAotCompile *acfg, MonoClass *klass, int depth,
 			mono_error_assert_ok (error); /* FIXME don't swallow the error */
 			add_generic_class (acfg, nclass, FALSE, "ICollection<T>");
 		}
-
+#endif
 		iter = NULL;
 		while ((method = mono_class_get_methods (array_class, &iter))) {
 			if (!strncmp (method->name, name_prefix, strlen (name_prefix))) {
@@ -5592,9 +5593,16 @@ add_generic_instances (MonoAotCompile *acfg)
 			insts [ninsts ++] = uint32_type;
 			insts [ninsts ++] = uint16_type;
 			insts [ninsts ++] = byte_type;
+#ifdef ENABLE_NETCORE
+			insts [ninsts ++] = int16_type;
+			insts [ninsts ++] = sbyte_type;
+			insts [ninsts ++] = int64_type;
+			insts [ninsts ++] = uint64_type;
+#endif
 			enum_comparer = mono_class_load_from_name (mono_defaults.corlib, "System.Collections.Generic", "EnumEqualityComparer`1");
 			add_instances_of (acfg, enum_comparer, insts, ninsts, FALSE);
 
+#ifndef ENABLE_NETCORE
 			ninsts = 0;
 			insts [ninsts ++] = int16_type;
 			enum_comparer = mono_class_load_from_name (mono_defaults.corlib, "System.Collections.Generic", "ShortEnumEqualityComparer`1");
@@ -5610,6 +5618,7 @@ add_generic_instances (MonoAotCompile *acfg)
 			insts [ninsts ++] = int64_type;
 			insts [ninsts ++] = uint64_type;
 			add_instances_of (acfg, enum_comparer, insts, ninsts, FALSE);
+#endif
 		}
 
 		/* Add instances of the array generic interfaces for primitive types */
