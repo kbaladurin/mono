@@ -31,6 +31,8 @@ MONO_API int STDAPICALLTYPE coreclr_execute_assembly (void* hostHandle, unsigned
 	int argc, const char** argv,
 	const char* managedAssemblyPath, unsigned int* exitCode);
 
+MONO_API int STDAPICALLTYPE coreclr_shutdown (void* hostHandle, unsigned int domainId);
+
 MONO_API int STDAPICALLTYPE coreclr_shutdown_2 (void* hostHandle, unsigned int domainId, int* latchedExitCode);
 
 MONO_API int STDAPICALLTYPE coreclr_create_delegate (void* hostHandle, unsigned int domainId,
@@ -296,6 +298,22 @@ int STDAPICALLTYPE coreclr_execute_assembly (void* hostHandle, unsigned int doma
 // Returns:
 //  HRESULT indicating status of the operation. S_OK if the assembly was successfully executed
 //
+int STDAPICALLTYPE coreclr_shutdown (void* hostHandle, unsigned int domainId)
+{
+	return coreclr_shutdown_2(hostHandle, domainId, NULL);
+}
+
+//
+// Shutdown CoreCLR. It unloads the app domain and stops the CoreCLR host.
+//
+// Parameters:
+//  hostHandle              - Handle of the host
+//  domainId                - Id of the domain
+//  latchedExitCode         - Latched exit code after domain unloaded
+//
+// Returns:
+//  HRESULT indicating status of the operation. S_OK if the assembly was successfully executed
+//
 int STDAPICALLTYPE coreclr_shutdown_2 (void* hostHandle, unsigned int domainId, int* latchedExitCode)
 {
 	mono_set_pinvoke_search_directories (0, NULL);
@@ -328,7 +346,7 @@ int STDAPICALLTYPE coreclr_create_delegate (void* hostHandle, unsigned int domai
 	const char* entryPointAssemblyName, const char* entryPointTypeName, const char* entryPointMethodName,
 	void** delegate)
 {
-	g_error ("Not implemented");
+	// g_error ("Not implemented");
 	return 0;
 }
 
