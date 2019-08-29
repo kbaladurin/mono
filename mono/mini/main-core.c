@@ -236,6 +236,16 @@ int STDAPICALLTYPE coreclr_initialize (const char* exePath, const char* appDomai
 	 */
 	mono_loader_set_strict_strong_names (TRUE);
 
+	int mono_argc = 2;
+	char **mono_argv = (char **) malloc(sizeof(char*) * (mono_argc + 1));
+	mono_argv[0] = NULL;
+	mono_argv[1] = appDomainFriendlyName;
+	mono_argv[2] = NULL;
+
+	mono_parse_env_options (&mono_argc, &mono_argv);
+
+	mono_initialize(mono_argc, mono_argv);
+
 	return 0;
 }
 
@@ -263,15 +273,9 @@ int STDAPICALLTYPE coreclr_execute_assembly (void* hostHandle, unsigned int doma
 		return -1;
 	}
 
-	//
-	// Make room for program name and executable assembly
-	//
-	int mono_argc = argc + 2;
-
+	int mono_argc = argc + 1;
 	char **mono_argv = (char **) malloc (sizeof (char *) * (mono_argc + 1 /* null terminated */));
 	const char **ptr = (const char **) mono_argv;
-	
-	*ptr++ = NULL;
 
 	// executable assembly
 	*ptr++ = (char*) managedAssemblyPath;
@@ -282,8 +286,7 @@ int STDAPICALLTYPE coreclr_execute_assembly (void* hostHandle, unsigned int doma
 
 	*ptr = NULL;
 
-	mono_parse_env_options (&mono_argc, &mono_argv);
-	*exitCode = mono_main (mono_argc, mono_argv);
+	*exitCode = mono_execute_assembly (managedAssemblyPath, mono_argc, mono_argv);
 
 	return 0;
 }

@@ -1965,6 +1965,503 @@ print_icall_table (void)
 }
 #endif
 
+static char *aot_options;
+static MonoDomain *domain;
+static guint32 opt;
+
+int
+mono_initialize (int argc, char* argv[])
+{
+	MonoMethodDesc *desc;
+	MonoMethod *method;
+	MonoCompile *cfg;
+	const char* aname, *mname = NULL;
+	char *config_file = NULL;
+	int i, count = 1;
+	guint32 recompilation_times = 1;
+	MonoGraphOptions mono_graph_options = (MonoGraphOptions)0;
+	int mini_verbose_level = 0;
+	char *trace_options = NULL;
+	char *aot_options = NULL;
+	char *forced_version = NULL;
+	GPtrArray *agents = NULL;
+	char *attach_options = NULL;
+	char *extra_bindings_config_file = NULL;
+#ifdef MONO_JIT_INFO_TABLE_TEST
+	int test_jit_info_table = FALSE;
+#endif
+#ifdef HOST_WIN32
+	int mixed_mode = FALSE;
+#endif
+
+#ifdef MOONLIGHT
+#ifndef HOST_WIN32
+	/* stdout defaults to block buffering if it's not writing to a terminal, which
+	 * happens with our test harness: we redirect stdout to capture it. Force line
+	 * buffering in all cases. */
+	setlinebuf (stdout);
+#endif
+#endif
+
+	setlocale (LC_ALL, "");
+
+#if TARGET_OSX
+	darwin_change_default_file_handles ();
+#endif
+
+	if (g_hasenv ("MONO_NO_SMP"))
+		mono_set_use_smp (FALSE);
+
+#ifdef MONO_JEMALLOC_ENABLED
+
+	gboolean use_jemalloc = FALSE;
+#ifdef MONO_JEMALLOC_DEFAULT
+	use_jemalloc = TRUE;
+#endif
+	if (!use_jemalloc)
+		use_jemalloc = g_hasenv ("MONO_USE_JEMALLOC");
+
+	if (use_jemalloc)
+		mono_init_jemalloc ();
+
+#endif
+
+	g_log_set_always_fatal (G_LOG_LEVEL_ERROR);
+	g_log_set_fatal_mask (G_LOG_DOMAIN, G_LOG_LEVEL_ERROR);
+
+	opt = mono_parse_default_optimizations (NULL);
+
+	for (i = 1; i < argc; ++i) {
+		if (argv [i] [0] != '-')
+			break;
+		if (strcmp (argv [i], "--verbose") == 0 || strcmp (argv [i], "-v") == 0) {
+			mini_verbose_level++;
+		} else if (strcmp (argv [i], "--version=number") == 0) {
+			g_print ("%s\n", VERSION);
+			return 0;
+		} else if (strncmp (argv [i], "--optimize=", 11) == 0) {
+			opt = parse_optimizations (opt, argv [i] + 11, TRUE);
+		} else if (strncmp (argv [i], "-O=", 3) == 0) {
+			opt = parse_optimizations (opt, argv [i] + 3, TRUE);
+		} else if (strncmp (argv [i], "--bisect=", 9) == 0) {
+			char *param = argv [i] + 9;
+			char *sep = strchr (param, ':');
+			if (!sep) {
+				fprintf (stderr, "Error: --bisect requires OPT:FILENAME\n");
+				return 1;
+			}
+			char *opt_string = g_strndup (param, sep - param);
+			guint32 opt = parse_optimizations (0, opt_string, FALSE);
+			g_free (opt_string);
+			mono_set_bisect_methods (opt, sep + 1);
+		} else if (strcmp (argv [i], "--gc=sgen") == 0) {
+			switch_gc (argv, "sgen");
+		} else if (strcmp (argv [i], "--gc=boehm") == 0) {
+			switch_gc (argv, "boehm");
+		} else if (strncmp (argv[i], "--gc-params=", 12) == 0) {
+			mono_gc_params_set (argv[i] + 12);
+		} else if (strncmp (argv[i], "--gc-debug=", 11) == 0) {
+			mono_gc_debug_set (argv[i] + 11);
+		}
+#ifdef TARGET_OSX
+		else if (strcmp (argv [i], "--arch=32") == 0) {
+			switch_arch (argv, "32");
+		} else if (strcmp (argv [i], "--arch=64") == 0) {
+			switch_arch (argv, "64");
+		}
+#endif
+		else if (strcmp (argv [i], "--config") == 0) {
+			if (i +1 >= argc){
+				fprintf (stderr, "error: --config requires a filename argument\n");
+				return 1;
+			}
+			config_file = argv [++i];
+#ifdef HOST_WIN32
+		} else if (strcmp (argv [i], "--mixed-mode") == 0) {
+			mixed_mode = TRUE;
+#endif
+		} else if (strcmp (argv [i], "--trace") == 0) {
+			trace_options = (char*)"";
+		} else if (strncmp (argv [i], "--trace=", 8) == 0) {
+			trace_options = &argv [i][8];
+		} else if (strcmp (argv [i], "--breakonex") == 0) {
+			MonoDebugOptions *opt = mini_get_debug_options ();
+
+			opt->break_on_exc = TRUE;
+		} else if (strcmp (argv [i], "--break") == 0) {
+			if (i+1 >= argc){
+				fprintf (stderr, "Missing method name in --break command line option\n");
+				return 1;
+			}
+
+			if (!mono_debugger_insert_breakpoint (argv [++i], FALSE))
+				fprintf (stderr, "Error: invalid method name '%s'\n", argv [i]);
+		} else if (strcmp (argv [i], "--break-at-bb") == 0) {
+			if (i + 2 >= argc) {
+				fprintf (stderr, "Missing method name or bb num in --break-at-bb command line option.");
+				return 1;
+			}
+			mono_break_at_bb_method = mono_method_desc_new (argv [++i], TRUE);
+			if (mono_break_at_bb_method == NULL) {
+				fprintf (stderr, "Method name is in a bad format in --break-at-bb command line option.");
+				return 1;
+			}
+			mono_break_at_bb_bb_num = atoi (argv [++i]);
+		} else if (strcmp (argv [i], "--inject-async-exc") == 0) {
+			if (i + 2 >= argc) {
+				fprintf (stderr, "Missing method name or position in --inject-async-exc command line option\n");
+				return 1;
+			}
+			mono_inject_async_exc_method = mono_method_desc_new (argv [++i], TRUE);
+			if (mono_inject_async_exc_method == NULL) {
+				fprintf (stderr, "Method name is in a bad format in --inject-async-exc command line option\n");
+				return 1;
+			}
+			mono_inject_async_exc_pos = atoi (argv [++i]);
+		} else if (strcmp (argv [i], "--verify-all") == 0) {
+			mono_verifier_enable_verify_all ();
+		} else if (strcmp (argv [i], "--full-aot") == 0) {
+			mono_jit_set_aot_mode (MONO_AOT_MODE_FULL);
+		} else if (strcmp (argv [i], "--llvmonly") == 0) {
+			mono_jit_set_aot_mode (MONO_AOT_MODE_LLVMONLY);
+		} else if (strcmp (argv [i], "--hybrid-aot") == 0) {
+			mono_jit_set_aot_mode (MONO_AOT_MODE_HYBRID);
+		} else if (strcmp (argv [i], "--full-aot-interp") == 0) {
+			mono_jit_set_aot_mode (MONO_AOT_MODE_INTERP);
+		} else if (strcmp (argv [i], "--llvmonly-interp") == 0) {
+			mono_jit_set_aot_mode (MONO_AOT_MODE_LLVMONLY_INTERP);
+		} else if (strcmp (argv [i], "--print-vtable") == 0) {
+			mono_print_vtable = TRUE;
+		} else if (strcmp (argv [i], "--stats") == 0) {
+			mono_counters_enable (-1);
+			mono_atomic_store_bool (&mono_stats.enabled, TRUE);
+			mono_atomic_store_bool (&mono_jit_stats.enabled, TRUE);
+		} else if (strncmp (argv [i], "--apply-bindings=", 17) == 0) {
+			extra_bindings_config_file = &argv[i][17];
+		} else if (strncmp (argv [i], "--aot-path=", 11) == 0) {
+			char **splitted;
+
+			splitted = g_strsplit (argv [i] + 11, G_SEARCHPATH_SEPARATOR_S, 1000);
+			while (*splitted) {
+				char *tmp = *splitted;
+				mono_aot_paths = g_list_append (mono_aot_paths, g_strdup (tmp));
+				g_free (tmp);
+				splitted++;
+			}
+		} else if (strncmp (argv [i], "--runtime=", 10) == 0) {
+			forced_version = &argv [i][10];
+		} else if (strcmp (argv [i], "--jitmap") == 0) {
+			mono_enable_jit_map ();
+		} else if (strcmp (argv [i], "--profile") == 0) {
+			mini_add_profiler_argument (NULL);
+		} else if (strncmp (argv [i], "--profile=", 10) == 0) {
+			mini_add_profiler_argument (argv [i] + 10);
+		} else if (strncmp (argv [i], "--agent=", 8) == 0) {
+			if (agents == NULL)
+				agents = g_ptr_array_new ();
+			g_ptr_array_add (agents, argv [i] + 8);
+		} else if (strncmp (argv [i], "--attach=", 9) == 0) {
+			attach_options = argv [i] + 9;
+		} else if (strcmp (argv [i], "--debug") == 0) {
+			enable_debugging = TRUE;
+		} else if (strncmp (argv [i], "--debug=", 8) == 0) {
+			enable_debugging = TRUE;
+			if (!parse_debug_options (argv [i] + 8))
+				return 1;
+ 		} else if (strncmp (argv [i], "--debugger-agent=", 17) == 0) {
+			MonoDebugOptions *opt = mini_get_debug_options ();
+
+			sdb_options = g_strdup (argv [i] + 17);
+			opt->mdb_optimizations = TRUE;
+			enable_debugging = TRUE;
+		} else if (strcmp (argv [i], "--security") == 0) {
+#ifndef DISABLE_SECURITY
+			mono_verifier_set_mode (MONO_VERIFIER_MODE_VERIFIABLE);
+#else
+			fprintf (stderr, "error: --security: not compiled with security manager support");
+			return 1;
+#endif
+		} else if (strncmp (argv [i], "--security=", 11) == 0) {
+			/* Note: validil, and verifiable need to be
+			   accepted even if DISABLE_SECURITY is defined. */
+
+			if (strcmp (argv [i] + 11, "core-clr") == 0) {
+#ifndef DISABLE_SECURITY
+				mono_verifier_set_mode (MONO_VERIFIER_MODE_VERIFIABLE);
+				mono_security_set_mode (MONO_SECURITY_MODE_CORE_CLR);
+#else
+				fprintf (stderr, "error: --security: not compiled with CoreCLR support");
+				return 1;
+#endif
+			} else if (strcmp (argv [i] + 11, "core-clr-test") == 0) {
+#ifndef DISABLE_SECURITY
+				/* fixme should we enable verifiable code here?*/
+				mono_security_set_mode (MONO_SECURITY_MODE_CORE_CLR);
+				mono_security_core_clr_test = TRUE;
+#else
+				fprintf (stderr, "error: --security: not compiled with CoreCLR support");
+				return 1;
+#endif
+			} else if (strcmp (argv [i] + 11, "cas") == 0) {
+#ifndef DISABLE_SECURITY
+				fprintf (stderr, "warning: --security=cas not supported.");
+#else
+				fprintf (stderr, "error: --security: not compiled with CAS support");
+				return 1;
+#endif
+			} else if (strcmp (argv [i] + 11, "validil") == 0) {
+				mono_verifier_set_mode (MONO_VERIFIER_MODE_VALID);
+			} else if (strcmp (argv [i] + 11, "verifiable") == 0) {
+				mono_verifier_set_mode (MONO_VERIFIER_MODE_VERIFIABLE);
+			} else {
+				fprintf (stderr, "error: --security= option has invalid argument (cas, core-clr, verifiable or validil)\n");
+				return 1;
+			}
+		} else if (strcmp (argv [i], "--desktop") == 0) {
+			mono_gc_set_desktop_mode ();
+			/* Put more desktop-specific optimizations here */
+		} else if (strcmp (argv [i], "--server") == 0){
+			mono_config_set_server_mode (TRUE);
+			/* Put more server-specific optimizations here */
+		} else if (strncmp (argv [i], "--wapi=", 7) == 0) {
+			fprintf (stderr, "--wapi= option no longer supported\n.");
+			return 1;
+		} else if (strcmp (argv [i], "--no-x86-stack-align") == 0) {
+			mono_do_x86_stack_align = FALSE;
+#ifdef MONO_JIT_INFO_TABLE_TEST
+		} else if (strcmp (argv [i], "--test-jit-info-table") == 0) {
+			test_jit_info_table = TRUE;
+#endif
+		} else if (strcmp (argv [i], "--llvm") == 0) {
+#ifndef MONO_ARCH_LLVM_SUPPORTED
+			fprintf (stderr, "Mono Warning: --llvm not supported on this platform.\n");
+#elif !defined(ENABLE_LLVM)
+			fprintf (stderr, "Mono Warning: --llvm not enabled in this runtime.\n");
+#else
+			mono_use_llvm = TRUE;
+#endif
+		} else if (strcmp (argv [i], "--nollvm") == 0){
+			mono_use_llvm = FALSE;
+		} else if ((strcmp (argv [i], "--interpreter") == 0) || !strcmp (argv [i], "--interp")) {
+			mono_runtime_set_execution_mode (MONO_EE_MODE_INTERP);
+		} else if (strncmp (argv [i], "--interp=", 9) == 0) {
+			mono_runtime_set_execution_mode_full (MONO_EE_MODE_INTERP, FALSE);
+			mono_interp_opts_string = argv [i] + 9;
+		} else if (strcmp (argv [i], "--print-icall-table") == 0) {
+#ifdef ENABLE_ICALL_SYMBOL_MAP
+			print_icall_table ();
+			exit (0);
+#else
+			fprintf (stderr, "--print-icall-table requires a runtime configured with the --enable-icall-symbol-map option.\n");
+			exit (1);
+#endif
+		} else if (strncmp (argv [i], "--assembly-loader=", strlen("--assembly-loader=")) == 0) {
+			gchar *arg = argv [i] + strlen ("--assembly-loader=");
+			if (strcmp (arg, "strict") == 0)
+				mono_loader_set_strict_strong_names (TRUE);
+			else if (strcmp (arg, "legacy") == 0)
+				mono_loader_set_strict_strong_names (FALSE);
+			else
+				fprintf (stderr, "Warning: unknown argument to --assembly-loader. Should be \"strict\" or \"legacy\"\n");
+		} else if (strncmp (argv [i], MONO_HANDLERS_ARGUMENT, MONO_HANDLERS_ARGUMENT_LEN) == 0) {
+			//Install specific custom handlers.
+			if (!mono_runtime_install_custom_handlers (argv[i] + MONO_HANDLERS_ARGUMENT_LEN)) {
+				fprintf (stderr, "error: " MONO_HANDLERS_ARGUMENT ", one or more unknown handlers: '%s'\n", argv [i]);
+				return 1;
+			}
+		} else if (strcmp (argv [i], "--help-handlers") == 0) {
+			mono_runtime_install_custom_handlers_usage ();
+			return 0;
+		} else if (strncmp (argv [i], "--response=", 11) == 0){
+			gchar *response_content;
+			gchar *response_options;
+			gsize response_content_len;
+
+			if (!g_file_get_contents (&argv[i][11], &response_content, &response_content_len, NULL)){
+				fprintf (stderr, "The specified response file can not be read\n");
+				exit (1);
+			}
+
+			response_options = response_content;
+
+			// Check for UTF8 BOM in file and remove if found.
+			if (response_content_len >= 3 && response_content [0] == '\xef' && response_content [1] == '\xbb' && response_content [2] == '\xbf') {
+				response_content_len -= 3;
+				response_options += 3;
+			}
+
+			if (response_content_len == 0) {
+				fprintf (stderr, "The specified response file is empty\n");
+				exit (1);
+			}
+
+			mono_parse_response_options (response_options, &argc, &argv, FALSE);
+			g_free (response_content);
+		} else if (argv [i][0] == '-' && argv [i][1] == '-' && mini_parse_debug_option (argv [i] + 2)) {
+		} else if (strcmp (argv [i], "--use-map-jit") == 0){
+			mono_setmmapjit (TRUE);
+		} else {
+			fprintf (stderr, "Unknown command line option: '%s'\n", argv [i]);
+			return 1;
+		}
+	}
+
+#if defined(DISABLE_HW_TRAPS) || defined(MONO_ARCH_DISABLE_HW_TRAPS)
+	// Signal handlers not available
+	{
+		MonoDebugOptions *opt = mini_get_debug_options ();
+		opt->explicit_null_checks = TRUE;
+	}
+#endif
+/*
+ * XXX: verify if other OSes need it; many platforms seem to have it so that
+ * mono_w32process_get_path -> mono_w32process_get_name, and the name is not
+ * necessarily a path instead of just the program name
+ */
+#if defined (_AIX)
+	/*
+	 * mono_w32process_get_path on these can only return a name, not a path;
+	 * which may not be good for us if the mono command name isn't on $PATH,
+	 * like in CI scenarios. chances are argv based is fine if we inherited
+	 * the environment variables.
+	 */
+	mono_w32process_set_cli_launcher (argv [0]);
+#elif !defined(HOST_WIN32) && defined(HAVE_UNISTD_H)
+	/*
+	 * If we are not embedded, use the mono runtime executable to run managed exe's.
+	 */
+	{
+		char *runtime_path;
+
+		runtime_path = mono_w32process_get_path (getpid ());
+		if (runtime_path) {
+			mono_w32process_set_cli_launcher (runtime_path);
+			g_free (runtime_path);
+		}
+	}
+#endif
+
+	if (g_hasenv ("MONO_XDEBUG"))
+		enable_debugging = TRUE;
+
+	mono_counters_init ();
+
+#ifndef HOST_WIN32
+	mono_w32handle_init ();
+#endif
+
+	/* Set rootdir before loading config */
+	mono_set_rootdir ();
+
+	mono_attach_parse_options (attach_options);
+
+	if (trace_options != NULL){
+		/* 
+		 * Need to call this before mini_init () so we can trace methods 
+		 * compiled there too.
+		 */
+		mono_jit_trace_calls = mono_trace_set_options (trace_options);
+		if (mono_jit_trace_calls == NULL)
+			exit (1);
+	}
+
+#ifdef DISABLE_JIT
+	if (!mono_aot_only && !mono_use_interpreter) {
+		fprintf (stderr, "This runtime has been configured with --enable-minimal=jit, so the --full-aot command line option is required.\n");
+		exit (1);
+	}
+#endif
+
+	if (enable_debugging)
+		mono_debug_init (MONO_DEBUG_FORMAT_MONO);
+
+#ifdef HOST_WIN32
+	if (mixed_mode)
+		mono_load_coree (argv [i]);
+#endif
+
+	/* Parse gac loading options before loading assemblies. */
+	mono_config_parse (config_file);
+
+	mono_set_defaults (mini_verbose_level, opt);
+	domain = mini_init (argv [i], forced_version);
+
+	mono_gc_set_stack_end (&domain);
+
+	if (agents) {
+		int i;
+
+		for (i = 0; i < agents->len; ++i) {
+			int res = load_agent (domain, (char*)g_ptr_array_index (agents, i));
+			if (res) {
+				g_ptr_array_free (agents, TRUE);
+				mini_cleanup (domain);
+				return 1;
+			}
+		}
+
+		g_ptr_array_free (agents, TRUE);
+	}
+
+#ifdef MONO_JIT_INFO_TABLE_TEST
+	if (test_jit_info_table)
+		jit_info_table_test (domain);
+#endif
+
+	return 0;
+}
+
+int
+mono_execute_assembly (const char *file, int argc, char* argv[])
+{
+	MonoAssemblyOpenRequest open_req;
+	MonoImageOpenStatus open_status;
+	mono_assembly_request_prepare (&open_req.request, sizeof (open_req), MONO_ASMCTX_DEFAULT);
+	open_req.request.alc = mono_domain_default_alc (mono_get_root_domain ());
+	MonoAssembly *assembly = mono_assembly_request_open (file, &open_req, &open_status);
+	if (!assembly) {
+		fprintf (stderr, "Cannot open assembly '%s': %s.\n", file, mono_image_strerror (open_status));
+		mini_cleanup (domain);
+		return 2;
+	}
+
+	mono_callspec_set_assembly (assembly);
+
+	const char *error;
+
+	//mono_set_rootdir ();
+
+	error = mono_check_corlib_version ();
+	if (error) {
+		fprintf (stderr, "Corlib not in sync with this runtime: %s\n", error);
+		fprintf (stderr, "Loaded from: %s\n",
+			mono_defaults.corlib? mono_image_get_filename (mono_defaults.corlib): "unknown");
+		fprintf (stderr, "Download a newer corlib or a newer runtime at http://www.mono-project.com/download.\n");
+		exit (1);
+	}
+
+#if defined(HOST_WIN32) && G_HAVE_API_SUPPORT(HAVE_CLASSIC_WINAPI_SUPPORT)
+	/* Detach console when executing IMAGE_SUBSYSTEM_WINDOWS_GUI on win32 */
+	if (!enable_debugging && mono_assembly_get_image_internal (assembly)->image_info->cli_header.nt.pe_subsys_required == IMAGE_SUBSYSTEM_WINDOWS_GUI)
+		FreeConsole ();
+#endif
+
+	MainThreadArgs main_args;
+	main_args.domain = domain;
+	main_args.file = file;
+	main_args.argc = argc;
+	main_args.argv = argv;
+	main_args.opts = opt;
+	main_args.aot_options = aot_options;
+	main_thread_handler (&main_args);
+	mono_thread_manage ();
+
+	mini_cleanup (domain);
+
+	/* Look up return value from System.Environment.ExitCode */
+	return mono_environment_exitcode_get ();
+}
+
 /**
  * mono_main:
  * \param argc number of arguments in the argv array
